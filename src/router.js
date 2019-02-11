@@ -6,13 +6,18 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // Redirects to /oswego-reverse-search as the default route.
     {
       path: '/',
+      redirect: '/oswego-reverse-search/'
+    },
+    {
+      path: '/oswego-reverse-search/',
       name: 'home',
       component: Home
     },
     {
-      path: '/about',
+      path: '/oswego-reverse-search/about',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
