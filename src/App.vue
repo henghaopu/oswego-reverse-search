@@ -1,29 +1,30 @@
+<!--
+  This component is called the root component. It is always rendered to the browser 
+  since what we're doing in the view instance in main.js is rendering that component.
+
+-->
+
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/oswego-reverse-search/">Home</router-link> |
-      <router-link to="/oswego-reverse-search/about">About</router-link>
-    </div>
+    <NavBar/>
+    <!-- When we request a certain page, this is where that component is loaded in. 
+         We set up different routes in router.js. -->
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import NavBar from '@/components/NavBar.vue'
+
+export default {
+  name: 'App',
+  components: {
+    NavBar
   }
 }
+</script>
+
+
+<style lang="scss">
+@import "@/styles/main.scss";
 </style>
